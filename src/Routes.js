@@ -1,11 +1,18 @@
 import React from 'react'
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Home from './components/home';
 import Login from './components/login';
+import CharactersList from './components/characters/characterslist';
+import CharactersDetail from './components/characters/charactersDetail';
+
+
 const Routes = () =>
-    <switch>
+    <Switch>
 <Route exact path="/" component={Home}/>
 <Route exact path="/login" component={Login}/>
-</switch>
+<Route exact path='/' component={Home}/>
+<Route exact path='/characters' component={CharactersList}/>
+<Route path='/characters/:id' component={CharactersDetail}/>
+</Switch>
 
 export default Routes
